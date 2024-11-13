@@ -1,12 +1,18 @@
 let users = [];
 let currentpage = 1;
-let itemsperpage = 10;
+let itemsperpage=10;
+document.getElementById("amt").addEventListener("change",(e)=>{
+   itemsperpage = parseInt(e.target.value)
+   rendertopage(currentpage)
+})
 let totalpage =0
 async function fetchdata() {
   try {
     const response = await fetch("https://dummyapi.online/api/users");
     const data = await response.json();
-    users = data;
+    const jsonData = JSON.stringify(data)
+     localStorage.setItem("apidata",jsonData)
+     users = JSON.parse(localStorage.getItem("apidata",jsonData))
     console.log("Fetched Users:", users);
 
     rendertopage(currentpage);

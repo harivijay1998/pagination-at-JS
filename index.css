@@ -62,3 +62,12 @@ th{
     border: 1px solid transparent;
     border-radius: 20px;
 }
+
+#amount-view{
+    padding-inline: 15px;
+    padding-block: 10px;
+    background-color: #051937;
+    color: aliceblue;
+    border: 1px solid transparent;
+    border-radius: 20px;
+}
